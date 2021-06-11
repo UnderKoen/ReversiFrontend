@@ -1,0 +1,87 @@
+<html lang="en">
+    <head>
+        <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine/jasmine_favicon.png">
+        <link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine/jasmine.css">
+
+        <script type="text/javascript" src="jasmine/lib/jasmine/jasmine.js"></script>
+        <script type="text/javascript" src="jasmine/lib/jasmine/jasmine-html.js"></script>
+        <script type="text/javascript" src="jasmine/lib/jasmine/boot.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <title></title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+        <script src="../src/js/feedbackWidget.js"></script>
+        <script src="../src/js/game.js"></script>
+    </head>
+    <body>
+
+        <div id="feedback-success" class="alert alert-success" role="alert">
+            <p>Veel succes met deze module!</p>
+        </div>
+
+        <script>
+
+            describe("A suite", function () {
+                it("contains spec with an expectation", function () {
+                    expect(true).toBe(true);
+                });
+            });
+
+            describe("Application initialisation", function () {
+                it("Method init returns true", function () {
+                    const result = myApp.init();
+                    expect(result).toBe(true);
+                });
+            });
+
+            beforeAll(function(done) {
+                $(function(){
+                    done();
+                });
+            });
+
+            describe("FeedbackWidget", function () {
+                it("Hide hides element", function () {
+                    const f = new FeedbackWidget("feedback-success");
+                    f.hide();
+
+                    const element = $("#feedback-success");
+
+                    expect(element).toBeDefined();
+                    expect(element.attr('style')).toBe('display: none;');
+                });
+            });
+
+            describe("Game", function () {
+                it("Global Scope", function () {
+                    expect(Game).toBeDefined();
+                });
+
+                it("Has function init", function () {
+                    expect(Game.init).toBeDefined();
+                    expect(Game.init.call).toBeDefined();
+                });
+
+                it("Has function Reversi.init", function () {
+                    expect(Game.Reversi.init).toBeDefined();
+                    expect(Game.Reversi.init.call).toBeDefined();
+                });
+
+                it("Has function Data.init", function () {
+                    expect(Game.Data.init).toBeDefined();
+                    expect(Game.Data.init.call).toBeDefined();
+                });
+
+                it("Has function Model.init", function () {
+                    expect(Game.Model.init).toBeDefined();
+                    expect(Game.Model.init.call).toBeDefined();
+                });
+            });
+
+
+        </script>
+
+
+    </body>
+</html>

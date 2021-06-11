@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript getting started</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+              crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+              integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+              crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous"></script>
+
+        <script src="https://unpkg.com/regenerator-runtime@0.13.1/runtime.js"></script>
+
+        <script src="./js/app.js"></script>
+        <script src="./js/vendor.js"></script>
+        <script src="./js/templates.js"></script>
+
+        <link rel="stylesheet" href="css/style.min.css">
+    </head>
+    <body>
+        <script>
+            function afterInit() {
+                console.log('Game init voltooid')
+            }
+
+            $(function(){
+                Game.init(afterInit);
+            })
+        </script>
+
+        <section class="widget widget--hidden">
+            <section class="widget__content">
+                <figure class="glyphicon glyphicon-ok widget__content__icon"></figure>
+                <p class="widget__content__text">Veel succes met deze module!</p>
+            </section>
+            <button class="widget__close widget__button">X</button>
+            <section class="widget__buttons">
+                <button class="widget__button">Weigeren</button>
+                <button  class="widget__button">Akkoord</button>
+            </section>
+        </section>
+        <div class="apiData"></div>
+        <div class="board">
+        </div>
+        <canvas id="myChart" width="400" height="400"></canvas>
+        <div class="fiche fiche--black"></div>
+        <div class="fiche fiche--white"></div>
+    </body>
+</html>

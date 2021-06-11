@@ -1,0 +1,11 @@
+<table>
+    {{#each board}}
+        <tr class="board__row board__row--y-{{@index}}">
+            {{#each this}}
+                <td class="board__row__element board__row__element--y-{{@../index}} board__row__element--x-{{@index}}">
+                    {{>fiche player = this}}
+                </td>
+            {{/each}}
+        </tr>
+    {{/each}}
+</table>
